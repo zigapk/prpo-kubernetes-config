@@ -22,7 +22,7 @@ kubectl apply -f [file_name]
 
 The entire stack was deployed to [Digitalocean's Kubernetes Service](https://www.digitalocean.com/products/kubernetes/) to evaluate their service and documentation. I was rather pleased with the simplicity and price performance of this solution, especially compared to alternatives such as AWS and Azure.
 
-A sample user interface was developed to demonstrate some of the functionalities. It is deployed at [164.92.240.87](http://164.92.240.87).
+A sample [user interface](https://github.com/zigapk/prpo-ui) was developed to demonstrate some of the functionalities. It is deployed at [164.92.240.87](http://164.92.240.87).
 
 Sample user's credentials:
 - username: `test@prpo.si`
