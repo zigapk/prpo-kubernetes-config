@@ -1,18 +1,29 @@
-# PRPO Kubernetes Config
+# PRPO Docs
 
-[prpo-auth](https://github.com/zigapk/prpo-auth) and [prpo-chargers](https://github.com/zigapk/prpo-chargers) microservices can be found at [67.207.79.81/auth](http://67.207.79.81/auth) and [67.207.79.81/char](http://67.207.79.81/char) respectively.
+This project was implemented as an excercise in microservice development for PRPO subject at UNI LJ.
 
-Docs for both are avaiable at:
+There are two microservices, both written in Go:
+-  [prpo-auth](https://github.com/zigapk/prpo-auth) for handling of the users and user credentials as well as
+-  [prpo-chargers](https://github.com/zigapk/prpo-chargers) for handling chargers and charger reservations.
 
-- docs for [prpo-auth](http://67.207.79.81/auth/docs/index.html) and
-- docs for [prpo-chargers](http://67.207.79.81/char/docs/index.html)
+Both are available at [67.207.79.81/auth](http://67.207.79.81/auth) and [67.207.79.81/char](http://67.207.79.81/char) respectively.
 
-Nginx ingress configuration is available in [ingress-configuration.yaml](ingress-configuration.yaml).
+OpenAPI docs for each can be found at:
+- [prpo-auth docs](http://67.207.79.81/auth/docs/index.html) and
+- [prpo-chargers docs](http://67.207.79.81/char/docs/index.html)
 
-Each kubernetes config file can be applied using
+A Nginx ingress controller is configured to route traffic to the desired backend. Its configuration can be found [here](ingress-configuration.yaml).
+
+Each kubernetes config file can be applied using:
 
 ```bash
 kubectl apply -f [file_name]
 ```
 
-# TODO: user interface
+The entire stack was deployed to [Digitalocean's Kubernetes Service](https://www.digitalocean.com/products/kubernetes/) to evaluate their service and documentation. I was rather pleased with the simplicity and price performance of this solution, especially compared to alternatives such as AWS and Azure.
+
+A sample user interface was developed to demonstrate some of the functionalities. It is deployed at [164.92.240.87](http://164.92.240.87).
+
+Sample user's credentials:
+- username: `test@prpo.si`
+- password: `asdfasdf`
